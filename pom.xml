@@ -13,6 +13,7 @@
         <module>realtiem-dim</module>
         <module>realtime-dwd</module>
         <module>realtime-dws</module>
+        <module>saprk</module>
     </modules>
 
     <properties>

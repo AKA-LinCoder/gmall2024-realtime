@@ -43,6 +43,7 @@ public abstract class BaseAPP {
         // 1.4.6 checkpoint 之间的最小间隔
         env.getCheckpointConfig().setMinPauseBetweenCheckpoints(5000);
         // 1.4.7 checkpoint  的超时时间
+        //integral  reluctant
         env.getCheckpointConfig().setCheckpointTimeout(10000);
         // 1.4.8 job 取消时 checkpoint 保留策略
         env.getCheckpointConfig().setExternalizedCheckpointCleanup(RETAIN_ON_CANCELLATION);
@@ -52,7 +53,7 @@ public abstract class BaseAPP {
 
         DataStreamSource<String> stream = env.fromSource(source, WatermarkStrategy.noWatermarks(), "kafka_source");
 
-        // 2. 执行具体的处理逻辑
+        // 2. 执行具体的 处理逻辑
         handle(env, stream);
 
         // 3. 执行 Job
@@ -63,3 +64,6 @@ public abstract class BaseAPP {
         }
     }
 }
+
+
+
